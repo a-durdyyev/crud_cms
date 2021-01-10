@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Session;
+use App\Client;
 
 class ClientController extends Controller
 {
@@ -13,7 +15,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        return view('clients.index');
+        $clients = Client::all();
+        return view('clients.index')->with('clients', $clients);
     }
 
     /**
@@ -34,7 +37,36 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Validation
+
+        $this->validate($request, [
+            'client' => 'required',
+            'codFiscal' => 'required',
+            'oras' => 'required',
+            'strada' => 'required',
+            'numar' => 'required',
+            'codPostal' => 'required',
+            'persoanaContact' => 'required',
+            'numarTelefon' => 'required',
+        ]);
+
+
+
+        //Create post
+
+        $client = Client::create([
+            'client' => $request->client,
+            'codFiscal' => $request->codFiscal,
+            'oras' => $request->oras,
+            'strada' => $request->strada,
+            'numar' => $request->numar,
+            'codPostal' => $request->codPostal,
+            'persoanaContact' => $request->persoanaContact,
+            'numarTelefon' => $request->numarTelefon,
+        ]);
+
+        Session::flash('success', 'Client a fost adaugat');
+        return redirect()->route('clients.index');
     }
 
     /**

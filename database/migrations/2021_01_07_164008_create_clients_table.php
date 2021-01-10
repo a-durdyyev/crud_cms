@@ -23,7 +23,7 @@ class CreateClientsTable extends Migration
             $table->string('numar');
             $table->integer('codPostal');
             $table->string('persoanaContact');
-            $table->integer('numarTelefon');
+            $table->bigInteger('numarTelefon');
 
             $table->timestamps();
         });

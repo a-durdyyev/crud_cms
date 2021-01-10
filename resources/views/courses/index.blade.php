@@ -29,21 +29,23 @@
                 </thead>
 
                 <tbody>
+                    @foreach($courses as $course)
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{$course->cursa}}</td>
+                        <td>{{$course->clientID}}</td>
+                        <td>{{$course->plecareData}}</td>
+                        <td>{{$course->plecareLocatie}}</td>
+                        <td>{{$course->sosireData}}</td>
+                        <td>{{$course->sosireLocatie}}</td>
+                        <td>{{$course->intoarcereData}}</td>
+                        <td>{{$course->intoarcereLocatie}}</td>
+                        <td>{{$course->europaletiIncarcat}}</td>
+                        <td>{{$course->europaletiDescarcat}}</td>
+                        <td>{{$course->pret}}</td>
+                        <td>{{$course->kilometriParcurs}}</td>
+                        <td>{{$course->notes}}</td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
