@@ -47,7 +47,7 @@ class ClientController extends Controller
             'numar' => 'required',
             'codPostal' => 'required',
             'persoanaContact' => 'required',
-            'numarTelefon' => 'required',
+            'numarTelefon' => 'required|max:10',
         ]);
 
 

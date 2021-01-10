@@ -15,9 +15,12 @@
                 <label for="cursa">Cursa</label>
                 <input type="text" name="cursa" class="form-control">
                 <br>
-                <label for="cursa">clientID</label>
-                <input type="number" name="clientID" class="form-control">
-                <br>
+                <label for="cursa">Selecteaza Client</label>
+                <select name="clientID" class="form-control">
+                    @foreach($clients as $client)
+                    <option value="{{$client->id}}">{{$client->client}}</option>
+                    @endforeach
+                </select>
                 <div class="row">
                     <div class="col-sm-3">
                         <label for="plecareData">Plecare data</label>
