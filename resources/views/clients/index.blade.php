@@ -7,6 +7,7 @@
         <div class="card-header">Clientii</div>
 
         <div class="card-body">
+
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -19,6 +20,7 @@
                         <th>codPostal</th>
                         <th>persoanaContact</th>
                         <th>numarTelefon</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
 
@@ -34,6 +36,7 @@
                         <td>{{$client->codPostal}}</td>
                         <td>{{$client->persoanaContact}}</td>
                         <td>{{$client->numarTelefon}}</td>
+                        <td><a href="{{route('clients.edit', $client->id ) }}">Edit</a></td>
                     </tr>
                     @endforeach
                 </tbody>

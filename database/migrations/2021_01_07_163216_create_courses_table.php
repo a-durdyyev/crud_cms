@@ -18,11 +18,11 @@ class CreateCoursesTable extends Migration
 
             $table->string('cursa');
             $table->integer('clientID');
-            $table->date('plecareData');
+            $table->dateTime('plecareData');
             $table->string('plecareLocatie');
-            $table->date('sosireData');
+            $table->dateTime('sosireData');
             $table->string('sosireLocatie');
-            $table->date('intoarcereData');
+            $table->dateTime('intoarcereData');
             $table->string('intoarcereLocatie');
             $table->integer('europaletiIncarcat');
             $table->integer('europaletiDescarcat');

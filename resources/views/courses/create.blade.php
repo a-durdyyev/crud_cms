@@ -24,14 +24,14 @@
                 <div class="row">
                     <div class="col-sm-3">
                         <label for="plecareData">Plecare data</label>
-                        <input type="date" name="plecareData" class="form-control">
+                        <input type="datetime-local" name="plecareData" class="form-control">
                         <br>
                         <label for="plecareLocatie">Plecare locatie</label>
                         <input type="text" name="plecareLocatie" class="form-control">
                     </div>
                     <div class="col-sm-3">
                         <label for="sosireData">Sosire data</label>
-                        <input type="date" name="sosireData" class="form-control">
+                        <input type="datetime-local" name="sosireData" class="form-control">
                         <br>
                         <label for="sosireLocatie">Sosire locatie</label>
                         <input type="text" name="sosireLocatie" class="form-control">
@@ -39,7 +39,7 @@
                     </div>
                     <div class="col-sm-3">
                         <label for="intoarcereData">Intoarcere data</label>
-                        <input type="date" name="intoarcereData" class="form-control">
+                        <input type="datetime-local" name="intoarcereData" class="form-control">
                         <br>
                         <label for="intoarcereLocatie">Intoarcere locatie</label>
                         <input type="text" name="intoarcereLocatie" class="form-control">

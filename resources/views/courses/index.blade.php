@@ -2,15 +2,15 @@
 @section('content')
 
 
-<div class="col-md-8">
+<div class="col-md-9">
     <div class="card">
         <div class="card-header">Toate Curse</div>
 
         <div class="card-body">
 
 
-            <table class="table table-bordered">
-                <thead>
+            <table class="table table-bordered table-responsive">
+                <thead class="thead-dark">
                     <tr>
                         <th>Curs</th>
                         <th>ClientID</th>
@@ -25,6 +25,7 @@
                         <th>pret</th>
                         <th>kilometriParcurs</th>
                         <th>notes</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
 
@@ -44,6 +45,7 @@
                         <td>{{$course->pret}}</td>
                         <td>{{$course->kilometriParcurs}}</td>
                         <td>{{$course->notes}}</td>
+                        <td><a href="{{route('courses.edit', $course->id)}}">Edit</a></td>
                     </tr>
                     @endforeach
                 </tbody>

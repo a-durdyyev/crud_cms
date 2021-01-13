@@ -108,7 +108,12 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $course = Course::find($id);
+
+        $clients = Client::all();
+
+        return view('courses.edit')->with('course', $course)
+            ->with('clients', $clients);
     }
 
     /**
@@ -120,7 +125,46 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $this->validate($request, [
+            'cursa' => 'required',
+            'clientID' => 'required',
+            'plecareData' => 'required',
+            'plecareLocatie' => 'required',
+            'sosireData' => 'required',
+            'sosireLocatie' => 'required',
+            'intoarcereData' => 'required',
+            'intoarcereLocatie' => 'required',
+            'europaletiIncarcat' => 'required',
+            'europaletiDescarcat' => 'required',
+            'pret' => 'required',
+            'kilometriParcurs' => 'required',
+            'notes' => 'required'
+        ]);
+
+
+        $course = Course::find($id);
+
+
+        $course->cursa = $request->cursa;
+        //$course->clientID = $request->clientID;
+        $course->plecareData = $request->plecareData;
+        $course->plecareLocatie = $request->plecareLocatie;
+        $course->sosireData = $request->sosireData;
+        $course->sosireLocatie = $request->sosireLocatie;
+        $course->intoarcereData = $request->intoarcereData;
+        $course->intoarcereLocatie = $request->intoarcereLocatie;
+        $course->europaletiIncarcat = $request->europaletiIncarcat;
+        $course->europaletiDescarcat = $request->europaletiDescarcat;
+        $course->pret = $request->pret;
+        $course->kilometriParcurs = $request->kilometriParcurs;
+        $course->notes = $request->notes;
+
+        $course->save();
+
+        Session::flash('success', 'Cursa a fost modificata');
+
+        return redirect()->route('courses.index');
     }
 
     /**
